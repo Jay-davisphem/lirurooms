@@ -1,4 +1,6 @@
-{% extends 'chat/base.html' %} {% block content %}
+{% extends 'chat/base.html' %} 
+{% block title %}Create Room{% endblock %}
+{% block content %}
 <form action="{% url 'create-room' %}" method="post">
   {% csrf_token %}
   <input

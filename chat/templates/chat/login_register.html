@@ -1,4 +1,5 @@
 {% extends 'chat/base.html' %} 
+{% block title %}{% if page == 'login' %}Login {% else %}Registration {% endif %}Page{% endblock %}
 {% block style%}
 <style>
   .slide_down {

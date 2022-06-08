@@ -1,5 +1,5 @@
 {% extends 'chat/base.html' %} 
-
+{% block title %}Chat Room {{ room.name }}{% endblock %}
 {% block content %}
 <h1>{{ room.name|upper }} chats.</h1>
 <div class="chats">
