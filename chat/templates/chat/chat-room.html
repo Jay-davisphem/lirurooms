@@ -1,0 +1,34 @@
+{% extends 'chat/base.html' %} 
+
+{% block content %}
+<h1>{{ room.name|upper }} chats.</h1>
+<div class="chats">
+  <div class="chats-wrapper">
+    {% for chat in chats %} {% ifchanged %}
+    <span class="time">{{ chat.created|timesince }} ago </span>
+    <hr />
+    {%else %} {%endifchanged%}
+
+    <div class="chat{% if request.user == chat.owner %}--user{% endif %}">
+      <div class="chat-details">
+        <small>
+          {% if request.user == chat.owner %} me
+          {%else%}{{chat.owner.username}}{% endif %}
+        </small>
+        <p>{{ chat.content }}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <form action="" method="post">
+    {% csrf_token %}
+    <input
+      style="position: fixed; bottom: 0; width: 80%; margin-left: 8%"
+      name="new_message"
+      id="new_message"
+      placeholder="Type your message here"
+    />
+  </form>
+</div>
+
+{% endblock %}

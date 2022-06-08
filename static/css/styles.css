@@ -1,0 +1,130 @@
+:root {
+  --main-color: #56494c;
+  --sec-color: #847e89;
+  --text-color: #c2d3cd;
+}
+
+body {
+  background: var(--main-color);
+  color: var(--text-color);
+}
+#out {
+  color: red;
+  font-weight: bolder;
+  margin-right: 63vw;
+}
+
+#home {
+  margin-right: -30px;
+}
+.button_slide {
+  color: var(--sec-color);
+  border-radius: 0px;
+  padding: 10px 36px;
+  display: inline-block;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 14px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 0 var(--main-color);
+  -webkit-transition: ease-out 0.4s;
+  -moz-transition: ease-out 0.4s;
+  transition: ease-out 0.4s;
+}
+
+.slide_left:hover {
+  box-shadow: inset 0 0 0 50px var(--main-color);
+  color: var(--text-color);
+}
+
+.slide_down {
+  margin-left: 35vw;
+  border-radius: 50px;
+  padding: 18px 36px;
+}
+.slide_down:hover {
+  box-shadow: inset 0 100px 0 0 var(--main-color);
+  color: var(--text-color);
+}
+
+.index-stuffs h1 {
+  text-align: center;
+  font-size: 2.5em;
+}
+.room-list {
+  margin: 10px;
+}
+.room {
+  font-size: 2.5em;
+}
+.room-list p {
+  font-size: 2.5em;
+  text-decoration: underline;
+}
+.room a:link,
+.room a:active {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.room a:hover {
+  color: var(--sec-color);
+}
+label {
+  display: block;
+  font-size: 1.6em;
+}
+
+input {
+  color: var(--main-color);
+  font-size: 1em;
+  margin-top: 20px;
+  line-height: 3em;
+  width: 200px;
+}
+
+.chats {
+  margin-bottom: 70px;
+  font-size: 1.5em;
+}
+
+.chat {
+  margin-left: 10%;
+}
+.chat--user {
+  position: relative;
+  margin-left: 70%;
+}
+
+.time {
+  margin: 0 auto;
+}
+
+hr {
+  width: 5%;
+  margin-bottom: 30px;
+}
+
+.chat,
+.chat--user {
+  background: var(--text-color);
+  color: var(--main-color);
+  max-width: 200px;
+  border-radius: 30px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.chat-details p {
+  overflow-wrap: break-word;
+}
+small {
+  color: green;
+}
+
+.notes {
+  float: right;
+  color: red;
+  background: var(--text-color);
+  font-size: 2em;
+}

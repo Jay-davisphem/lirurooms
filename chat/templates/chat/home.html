@@ -1,0 +1,27 @@
+{% extends 'chat/base.html' %} 
+{% load static %} 
+{%block asides%}{% endblock%}
+
+{%block content %}
+<article class="index-stuffs">
+
+  <div>
+  <h1>Welcome to my tinny chatrooms home</h1>
+  <a href="{% url 'create-room' %}">
+    <button class="slide_down button_slide">Create Your Tinny Room</button>
+    </a>
+    <div class="room-list">
+      <p>Random Room list</p>
+      {% for room in rooms %}
+      <div class="room">
+      <a href="{% url 'room' room.id %}">{{ room.name }}</a>
+    </div>
+    {% endfor %}
+  </div>
+  </div>
+
+  <div class='notes'>
+    NOTE: This is a tiny chat app and therefore. Your storage will be cleared after 30 minutes of inactivities or when you 'log out of chat'. Though your login details is still intaact
+  </div>
+</article>
+{% endblock %}

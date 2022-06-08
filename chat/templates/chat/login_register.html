@@ -1,0 +1,36 @@
+{% extends 'chat/base.html' %} 
+{% block style%}
+<style>
+  .slide_down {
+    margin-left: 0;
+    padding: 10px 36px;
+  }
+</style>
+{% endblock %} 
+{% block content %} 
+{% block login_ %}{%endblock%}
+<form class="form" action="" method="post">
+  {% csrf_token %} 
+  {% if page == 'login' %}
+  <div class="group">
+    <label for="usename"
+      >Username
+      <input id="username" name="username" placeholder="e.g. davisphem"/>
+    </label>
+    <label for="password">Password
+      <input
+        id="password"
+        name="password"
+        type="password"
+        placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;"/>
+    </label>
+  </div>
+  {% else %}
+  <div class="group">{{form}}</div>
+  {% endif %}
+  <button type="submit" class="slide_down button_slide">
+    {% if page == 'login' %}Login{% else %}Register{% endif %}
+  </button>
+</form>
+
+{% endblock %}

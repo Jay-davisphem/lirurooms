@@ -1,0 +1,24 @@
+{% extends 'chat/base.html' %} {% block content %}
+<form action="{% url 'create-room' %}" method="post">
+  {% csrf_token %}
+  <input
+    style="
+      color: var(--main-color);
+      display: block;
+      margin-left: 35vw;
+      margin-bottom: 20px;
+      font-size: 1em;
+    "
+    id="room_name"
+    placeholder="Please enter your unique chat name! "
+    name="room_name"
+    value="{{ current_name }}"
+    pattern="[ \w]{3,}"
+    title="Room name length must be at least 3 letters long"
+    required
+  />
+  <button type="submit" class="slide_down button_slide">
+    CREATE THAT TINNY ROOM
+  </button>
+</form>
+{% endblock %}

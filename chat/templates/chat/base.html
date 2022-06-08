@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      {% block title %}Welcome to my tinny chatrooms home{% endblock %}
+    </title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/styles.css' %}"/>
+    {% block style %}
+    {% endblock %}
+  </head>
+
+  <body>
+    <nav>
+      {% if request.user.is_authenticated %}
+      <a href="{% url 'logout' %}"
+        ><button class="button_slide slide_left" id="out">
+          Log out of chat
+        </button></a>
+      {% else %} {% block login_ %}
+      <a href="{% url 'login' %}"
+        ><button class="button_slide slide_left login">Please Login</button></a>
+      Or{% endblock %}
+      <a href="{% url 'register' %}">
+        <button id="register" class="button_slide slide_left">
+          Register
+        </button></a>
+      {% endif %} {% block asides %}
+      <a href="/">
+        <button id="home" class="button_slide slide_left">Home</button></a>
+      {% endblock %}
+    </nav>
+    {% block content %}{% endblock %}
+  </body>
+</html>
